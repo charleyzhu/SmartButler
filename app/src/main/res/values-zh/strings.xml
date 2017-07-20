@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">智能管家</string>
+    <string name="tab_ServerButler">服务管家</string>
+    <string name="tab_Wechat">微信精选</string>
+    <string name="tab_girl">美女社区</string>
+    <string name="tab_User">个人中心</string>
+    <string name="setting">设置</string>
+    <string name="skip">跳过</string>
+    <string name="enter">进入首页</string>
+    <string name="UserName">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="smart">智能</string>
+    <string name="powerful">强大</string>
+    <string name="concise">简洁</string>
+</resources>

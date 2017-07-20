@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SmartButler</string>
+    <string name="enter">进入首页</string>
+    <string name="UserName">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="smart">智能</string>
+    <string name="powerful">强大</string>
+    <string name="concise">简洁</string>
+</resources>
