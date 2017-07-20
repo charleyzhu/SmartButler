@@ -14,4 +14,8 @@
     <string name="smart">智能</string>
     <string name="powerful">强大</string>
     <string name="concise">简洁</string>
+    <string name="age">年龄</string>
+    <string name="jianjie">简介</string>
+    <string name="checkPassword">验证密码</string>
+    <string name="eMail">电子邮箱</string>
 </resources>

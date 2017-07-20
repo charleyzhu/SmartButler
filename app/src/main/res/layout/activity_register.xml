@@ -2,6 +2,76 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="10dp">
+
+
+    <EditText
+        android:id="@+id/et_UserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/UserName" />
+
+    <EditText
+        android:id="@+id/et_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/age" />
+
+    <EditText
+        android:id="@+id/et_Profile"
+        android:layout_width="match_parent"
+        android:layout_height="60pt"
+        android:gravity="top"
+        android:hint="@string/jianjie"
+        android:lines="2" />
+
+    <RadioGroup
+        android:id="@+id/rg_sexGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/password" />
+
+    <EditText
+        android:id="@+id/et_rePassword"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/checkPassword" />
+
+    <EditText
+        android:id="@+id/et_eMail"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/eMail" />
+
+    <Button
+        android:id="@id/btn_register"
+        android:background="@drawable/button_bg"
+        android:text="@string/register"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
 </LinearLayout>

@@ -21,7 +21,7 @@ class BaseApplicaion:Application() {
         //初始化bugly
         CrashReport.initCrashReport(getApplicationContext(),StaticClass.BUGLY_APPID, false)
         //初始化bmob
-//        Bmob.initialize(this, "9fca76f8b794026a1e47aec541b5b8b7");
+        Bmob.initialize(this, "9fca76f8b794026a1e47aec541b5b8b7");
 
     }
 }
