@@ -1,6 +1,7 @@
 package com.dotop.smartbutler.ui
 
 import android.os.Bundle
+import com.dotop.smartbutler.R
 
 /**
  * 项目名称:       SmartButler
@@ -15,6 +16,6 @@ import android.os.Bundle
 class RegisterActivity :BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        setContentView(R.layout.activity_register)
     }
 }
