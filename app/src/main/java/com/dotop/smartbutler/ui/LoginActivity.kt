@@ -3,6 +3,7 @@ package com.dotop.smartbutler.ui
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
 import cn.bmob.v3.exception.BmobException
 import cn.bmob.v3.listener.SaveListener
 import com.dotop.smartbutler.MainActivity
@@ -10,9 +11,12 @@ import com.dotop.smartbutler.R
 import com.dotop.smartbutler.entity.SmartUser
 import com.dotop.smartbutler.utils.ShareUtils
 import com.dotop.smartbutler.utils.StaticClass
+import com.dotop.smartbutler.view.CustomDialog
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.toast
+
+
 
 /**
  * 项目名称:       SmartButler
@@ -27,6 +31,7 @@ import org.jetbrains.anko.toast
 class LoginActivity : AppCompatActivity() {
 
     val mConText = this
+    var dialog:CustomDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -46,6 +51,8 @@ class LoginActivity : AppCompatActivity() {
             et_UserName.setText(saveUser.toCharArray(), 0, saveUser.length)
             et_Password.setText(savePass.toCharArray(), 0, savePass.length)
         }
+        dialog = CustomDialog(this, 300, 300, R.layout.dialog_loding, R.style.Theme_dialog, Gravity.CENTER, R.style.pop_anim_style)
+        dialog?.setCancelable(false)
 
     }
 
@@ -57,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
         }
         //登录按钮点击
         btn_Login.onClick {
+            dialog?.show()
             if (et_UserName.text.isEmpty()) {
                 toast(getString(R.string.enterUserName))
                 return@onClick
@@ -68,6 +76,7 @@ class LoginActivity : AppCompatActivity() {
             val su = SmartUser(et_UserName.text.toString().trim(), et_Password.text.toString().trim())
             su.login(object : SaveListener<SmartUser>() {
                 override fun done(p0: SmartUser?, e: BmobException?) {
+                    dialog?.dismiss()
                     if (null == e) {
                         toast(getString(R.string.loginWasSuccessful))
                         if (ck_savepassword.isChecked) {

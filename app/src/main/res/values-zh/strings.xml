@@ -33,4 +33,5 @@
     <string name="findPassword">找回密码</string>
     <string name="enterOldPassword">请输入原始密码!</string>
     <string name="changeSuccessfully">修改成功</string>
+    <string name="loging">正在登陆...</string>
 </resources>
