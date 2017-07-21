@@ -73,8 +73,7 @@ class SplashActivity : AppCompatActivity() {
             ShareUtils.put(this,StaticClass.SHARE_IS_FIRST,false)
             return isFirst
         }
-        return true
-//        return isFirst
+        return isFirst
     }
 
     //禁止返回键

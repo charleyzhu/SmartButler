@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">SmartButler</string>
-    <string name="enter">进入</string>
+    <string name="tab_ServerButler">服务管家</string>
+    <string name="tab_Wechat">微信精选</string>
+    <string name="tab_girl">美女社区</string>
+    <string name="tab_User">个人中心</string>
+    <string name="setting">设置</string>
+    <string name="skip">跳过</string>
+    <string name="enter">进入首页</string>
     <string name="UserName">用户名</string>
     <string name="password">密码</string>
     <string name="login">登录</string>
@@ -12,4 +18,19 @@
     <string name="jianjie">简介</string>
     <string name="checkPassword">验证密码</string>
     <string name="eMail">电子邮箱</string>
+    <string name="enterUserName">请输入用户名!</string>
+    <string name="enterAge">请输入年龄!</string>
+    <string name="enterPassword">请输入密码!</string>
+    <string name="enterRePassword">请输入验证密码!</string>
+    <string name="checkPasswordAndRePassword">请确认密码和验证密码是否一致!</string>
+    <string name="enterEmail">请输入电子邮箱!</string>
+    <string name="noDesc">这家伙很懒，什么都没有留下!</string>
+    <string name="regsigerWasSuccessful">注册成功！</string>
+    <string name="error">错误</string>
+    <string name="loginWasSuccessful">登录成功</string>
+    <string name="changePassword">修改密码</string>
+    <string name="odPassword">原始密码</string>
+    <string name="findPassword">找回密码</string>
+    <string name="enterOldPassword">请输入原始密码!</string>
+    <string name="changeSuccessfully">修改成功</string>
 </resources>

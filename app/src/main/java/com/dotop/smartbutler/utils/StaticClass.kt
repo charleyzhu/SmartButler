@@ -17,4 +17,10 @@ object StaticClass {
     const val SHARE_IS_FIRST = "isFirst"
     //buglyID
     const val BUGLY_APPID = "1190666b4a"
+    //是否保存密码
+    const val isSavePassword = "isSavePassword"
+    //用户名
+    const val userName = "UserName"
+    //密码
+    const val passWord = "PassWord"
 }

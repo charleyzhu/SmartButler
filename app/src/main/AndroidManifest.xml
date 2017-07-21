@@ -46,6 +46,8 @@
         <activity android:name=".ui.LoginActivity"/>
         <!--注册页-->
         <activity android:name=".ui.RegisterActivity"/>
+        <!--密码重置找回-->
+        <activity android:name=".ui.ForgetPasswordActivity"/>
     </application>
 
 </manifest>
