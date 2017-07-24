@@ -34,4 +34,13 @@
     <string name="enterOldPassword">请输入原始密码!</string>
     <string name="changeSuccessfully">修改成功</string>
     <string name="loging">正在登陆...</string>
+    <string name="edit_info">编辑资料</string>
+    <string name="name">姓名:</string>
+    <string name="sex">性别:</string>
+    <string name="desc">简介:</string>
+    <string name="Confirm_change">确定修改</string>
+    <string name="age2">年龄:</string>
+    <string name="logistics_query">物流查询</string>
+    <string name="attribution_query">归属地查询</string>
+    <string name="logout">退出登录</string>
 </resources>
