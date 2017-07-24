@@ -14,6 +14,7 @@ import com.dotop.smartbutler.fragment.GirlFragment
 import com.dotop.smartbutler.fragment.UserFragment
 import com.dotop.smartbutler.fragment.WechatFragment
 import com.dotop.smartbutler.ui.SettingActivity
+import com.dotop.smartbutler.utils.L
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
@@ -94,8 +95,5 @@ class MainActivity : AppCompatActivity() {
         //绑定tablayout绑定pageView
         mTabLayout.setupWithViewPager(mViewPage)
     }
-
-
-
 
 }

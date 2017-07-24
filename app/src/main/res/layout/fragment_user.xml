@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,10 +21,14 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageView
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
-                android:src="@drawable/add_pic" />
+                android:src="@drawable/add_pic"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp" />
 
             <Button
                 android:id="@+id/btn_changeInfo"
@@ -144,11 +149,11 @@
                 android:id="@+id/btn_commitChange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:background="@drawable/button_bg"
                 android:text="@string/Confirm_change"
-                android:layout_margin="10dp"
-                android:visibility="gone"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -187,7 +192,7 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/button_bg"
                 android:text="@string/logout"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white" />
 
 
         </LinearLayout>

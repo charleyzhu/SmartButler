@@ -18,9 +18,20 @@ class CustomDialog(context: Context, style: Int) : Dialog(context, style) {
     //定义属性
     constructor(context: Context, width: Int, height: Int, layout: Int, style: Int, gravity: Int, anim: Int) : this(context, style) {
         setContentView(layout)
-        val layoutParams = window.attributes;
-        layoutParams.width = width
-        layoutParams.height = height
+        val layoutParams = window.attributes
+
+        layoutParams.width = if (width == 0){
+            WindowManager.LayoutParams.MATCH_PARENT
+        }else {
+            width
+        }
+
+        layoutParams.height = if (height == 0){
+            WindowManager.LayoutParams.WRAP_CONTENT
+        }else {
+            height
+        }
+
         layoutParams.gravity = gravity
         window.attributes = layoutParams
         window.setWindowAnimations(anim)

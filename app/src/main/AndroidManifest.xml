@@ -16,6 +16,9 @@
     <!--获取sd卡写的权限，用于文件上传和下载-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    
+
     <application
         android:name=".application.BaseApplicaion"
         android:allowBackup="true"
@@ -24,6 +27,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.dotop.smartbutler.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
 
         <activity android:name=".ui.SplashActivity" android:theme="@style/NoActivityFullScreen">
             <intent-filter>
@@ -48,6 +61,13 @@
         <activity android:name=".ui.RegisterActivity"/>
         <!--密码重置找回-->
         <activity android:name=".ui.ForgetPasswordActivity"/>
+
+        <!--图片裁剪-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 
 </manifest>

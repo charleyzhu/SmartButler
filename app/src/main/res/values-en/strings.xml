@@ -43,4 +43,7 @@
     <string name="logistics_query">物流查询</string>
     <string name="attribution_query">归属地查询</string>
     <string name="logout">退出登录</string>
+    <string name="cancel">取消</string>
+    <string name="Photograph">拍照</string>
+    <string name="gallery">图库</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.dotop.smartbutler.application
 
 import android.app.Application
+import android.os.Build
+import android.os.StrictMode
 import com.dotop.smartbutler.utils.StaticClass
 import com.tencent.bugly.crashreport.CrashReport
 import cn.bmob.v3.Bmob
@@ -21,7 +23,13 @@ class BaseApplicaion:Application() {
         //初始化bugly
         CrashReport.initCrashReport(getApplicationContext(),StaticClass.BUGLY_APPID, false)
         //初始化bmob
-        Bmob.initialize(this, "9fca76f8b794026a1e47aec541b5b8b7");
+        Bmob.initialize(this, StaticClass.BMOB_APPID)
+
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+//            val vmBuild = StrictMode.VmPolicy.Builder()
+//            StrictMode.setVmPolicy(vmBuild.build())
+//        }
+
 
     }
 }

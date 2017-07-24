@@ -1,5 +1,7 @@
 package com.dotop.smartbutler.utils
 
+import cn.bmob.v3.Bmob
+
 /**
  * 项目名称:       SmartButler
  * 包名:           com.dotop.smartbutler.utils
@@ -17,10 +19,14 @@ object StaticClass {
     const val SHARE_IS_FIRST = "isFirst"
     //buglyID
     const val BUGLY_APPID = "1190666b4a"
+    const val BMOB_APPID = "9fca76f8b794026a1e47aec541b5b8b7"
+
     //是否保存密码
     const val isSavePassword = "isSavePassword"
     //用户名
     const val userName = "UserName"
     //密码
     const val passWord = "PassWord"
+    //头像
+    const val PROFILEKEY = "frofileImage"
 }
