@@ -29,4 +29,7 @@ object StaticClass {
     const val passWord = "PassWord"
     //头像
     const val PROFILEKEY = "frofileImage"
+    //聚合数据快递APPID
+    const val JUHE_COURIER = "e0555462055ffb153b55ae34a1cbb7e8"
+
 }

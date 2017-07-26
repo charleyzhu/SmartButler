@@ -46,4 +46,7 @@
     <string name="cancel">取消</string>
     <string name="Photograph">拍照</string>
     <string name="gallery">图库</string>
+    <string name="express_company">快递公司</string>
+    <string name="express_number">快递单号</string>
+    <string name="query">查询</string>
 </resources>

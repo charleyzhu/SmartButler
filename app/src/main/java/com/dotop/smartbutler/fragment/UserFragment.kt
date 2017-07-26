@@ -29,10 +29,13 @@ import android.support.v4.content.FileProvider
 import android.content.pm.PackageManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import android.widget.TextView
+import com.dotop.smartbutler.ui.CourierActivity
 import com.dotop.smartbutler.utils.ShareUtils
 import com.dotop.smartbutler.utils.StaticClass
 import com.dotop.smartbutler.utils.UtilTools
 import com.yalantis.ucrop.UCrop
+import org.jetbrains.anko.support.v4.act
 import java.net.URI
 
 
@@ -87,6 +90,11 @@ class UserFragment : Fragment() {
     val REQUEST_UCROP = 1003
 
 
+    //底部两个
+    lateinit var textView_Courier: TextView
+    lateinit var textView__AttributionQuery: TextView
+
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val userView = inflater?.inflate(R.layout.fragment_user, null)
 
@@ -114,6 +122,11 @@ class UserFragment : Fragment() {
         et_sex = view.findViewById<View>(R.id.et_sex) as EditText
         et_desc = view.findViewById<View>(R.id.et_desc) as EditText
 
+        textView_Courier = view.findViewById<View>(R.id.tv_LogisticsQuery) as TextView
+        textView__AttributionQuery = view.findViewById<View>(R.id.tv_AttributionQuery) as TextView
+
+
+
         profileImage = view.findViewById(R.id.profile_image)
 
         dialog = CustomDialog(activity, 0, 0, R.layout.dialog_profile_image, R.style.pop_anim_style, Gravity.BOTTOM, R.style.pop_anim_style)
@@ -139,8 +152,8 @@ class UserFragment : Fragment() {
 
         et_desc.setText(su.mDesc.toCharArray(), 0, su.mDesc.length)
 
-        val proFileBitmap = UtilTools.getImageFromShare(activity,StaticClass.PROFILEKEY)
-        if (proFileBitmap != null){
+        val proFileBitmap = UtilTools.getImageFromShare(activity, StaticClass.PROFILEKEY)
+        if (proFileBitmap != null) {
             profileImage.setImageBitmap(proFileBitmap)
         }
 
@@ -213,6 +226,10 @@ class UserFragment : Fragment() {
             startActivityForResult(intent, REQUEST_IMAGE)
         }
 
+        textView_Courier.onClick {
+            startActivity(Intent(activity, CourierActivity::class.java))
+        }
+
 
     }
 
@@ -244,7 +261,7 @@ class UserFragment : Fragment() {
                     val outfile = UCrop.getOutput(data!!)
                     val picBitmap = MediaStore.Images.Media.getBitmap(activity.contentResolver, outfile)
                     profileImage.setImageBitmap(picBitmap)
-                    UtilTools.pubImageToShare(activity,StaticClass.PROFILEKEY,picBitmap)
+                    UtilTools.pubImageToShare(activity, StaticClass.PROFILEKEY, picBitmap)
                 }
 
                 UCrop.RESULT_ERROR -> {

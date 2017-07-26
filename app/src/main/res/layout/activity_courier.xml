@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <EditText
+        android:id="@+id/et_Company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/express_company"
+        android:text="yd" />
+
+    <EditText
+        android:id="@+id/et_Number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/express_number"
+        android:text="3907535662235" />
+
+    <Button
+        android:id="@+id/btn_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/query"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <!-- android:scrollbars="none" 取消表格线-->
+    <ListView
+        android:divider="@null"
+        android:scrollbars="none"
+        android:id="@+id/lv_rows"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </ListView>
+
+</LinearLayout>
