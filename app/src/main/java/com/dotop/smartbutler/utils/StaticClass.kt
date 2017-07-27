@@ -31,5 +31,6 @@ object StaticClass {
     const val PROFILEKEY = "frofileImage"
     //聚合数据快递APPID
     const val JUHE_COURIER = "e0555462055ffb153b55ae34a1cbb7e8"
-
+    //京东万象手机归属地查询
+    const val jCloud_PhoneNumber = "9ee825aa5e8760d8585ce038e3cc41c0"
 }

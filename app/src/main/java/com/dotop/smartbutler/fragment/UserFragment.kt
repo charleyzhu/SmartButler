@@ -31,6 +31,7 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.widget.TextView
 import com.dotop.smartbutler.ui.CourierActivity
+import com.dotop.smartbutler.ui.PhoneActivity
 import com.dotop.smartbutler.utils.ShareUtils
 import com.dotop.smartbutler.utils.StaticClass
 import com.dotop.smartbutler.utils.UtilTools
@@ -228,6 +229,9 @@ class UserFragment : Fragment() {
 
         textView_Courier.onClick {
             startActivity(Intent(activity, CourierActivity::class.java))
+        }
+        textView__AttributionQuery.onClick {
+            startActivity(Intent(activity, PhoneActivity::class.java))
         }
 
 

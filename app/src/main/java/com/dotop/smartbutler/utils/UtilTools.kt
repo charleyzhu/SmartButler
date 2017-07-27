@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Typeface
 import android.util.Base64
+import android.widget.EditText
 import android.widget.TextView
 import java.io.ByteArrayOutputStream
 import java.io.IOException

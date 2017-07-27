@@ -30,7 +30,7 @@
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 
-    <!-- android:scrollbars="none" 取消表格线-->
+    <!-- android:divider="@null" 取消表格线-->
     <ListView
         android:divider="@null"
         android:scrollbars="none"
