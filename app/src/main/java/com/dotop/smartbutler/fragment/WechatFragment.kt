@@ -52,6 +52,7 @@ class WechatFragment : Fragment() {
             L.d(mList[position].toString())
             val intent = Intent(activity,weChatDetailActivity::class.java)
             intent.putExtra("url",wechatData.url)
+            intent.putExtra("title",wechatData.title)
             startActivity(intent)
         }
 

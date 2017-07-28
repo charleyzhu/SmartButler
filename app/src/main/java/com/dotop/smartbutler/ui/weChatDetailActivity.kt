@@ -1,8 +1,11 @@
 package com.dotop.smartbutler.ui
 
 import android.os.Bundle
+import android.view.View
 import android.webkit.*
+import android.widget.ProgressBar
 import com.dotop.smartbutler.R
+import com.tencent.bugly.proguard.m
 import kotlinx.android.synthetic.main.activity_wechat_detail.*
 import kotlinx.android.synthetic.main.activity_wechat_detail.view.*
 import org.jetbrains.anko.toast
@@ -19,12 +22,16 @@ import org.jetbrains.anko.webView
 
 
 class weChatDetailActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wechat_detail)
 
-        wv_webview.settings.javaScriptEnabled = true
 
+        wv_webview.settings.javaScriptEnabled = true
+        wv_webview.settings.builtInZoomControls = true
+
+        wv_webview.webChromeClient = ChromeWebViewClient(mProgressBar)
 
 
         wv_webview.webViewClient = object : WebViewClient() {
@@ -37,7 +44,19 @@ class weChatDetailActivity : BaseActivity() {
             }
         }
         wv_webview.loadUrl(intent.getStringExtra("url"))
+        supportActionBar?.title = intent.getStringExtra("title")
 
+
+    }
+
+    class ChromeWebViewClient(var mProgressBar:ProgressBar ) : WebChromeClient() {
+
+        override fun onProgressChanged(view: WebView?, newProgress: Int) {
+            if (newProgress == 100){
+                mProgressBar.visibility = View.GONE
+            }
+            super.onProgressChanged(view, newProgress)
+        }
 
     }
 }

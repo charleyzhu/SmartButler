@@ -16,8 +16,8 @@
     <!--获取sd卡写的权限，用于文件上传和下载-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:name=".application.BaseApplicaion"
@@ -27,18 +27,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.dotop.smartbutler.fileprovider"
-            android:grantUriPermissions="true"
-            android:exported="false">
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
 
-        <activity android:name=".ui.SplashActivity" android:theme="@style/NoActivityFullScreen">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:theme="@style/NoActivityFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,41 +49,49 @@
         </activity>
 
         <!--设置-->
-        <activity android:name=".ui.SettingActivity"
-            android:label="@string/setting"/>
+        <activity
+            android:name=".ui.SettingActivity"
+            android:label="@string/setting" />
         <!--主页-->
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
 
         <!--功能介绍-->
-        <activity android:name=".ui.GuideActivity" android:theme="@style/NoActivityFullScreen"/>
+        <activity
+            android:name=".ui.GuideActivity"
+            android:theme="@style/NoActivityFullScreen" />
 
         <!--登录页-->
-        <activity android:name=".ui.LoginActivity" android:label="登录"/>
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="登录" />
         <!--注册页-->
-        <activity android:name=".ui.RegisterActivity" android:label="注册"/>
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:label="注册" />
         <!--密码重置找回-->
-        <activity android:name=".ui.ForgetPasswordActivity" android:label="找回密码"/>
+        <activity
+            android:name=".ui.ForgetPasswordActivity"
+            android:label="找回密码" />
 
         <!--图片裁剪-->
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
-        <!--图片裁剪-->
-        <activity
-            android:name=".ui"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <!--快递查询-->
-        <activity android:name=".ui.CourierActivity" android:label="快递查询"/>
+        <activity
+            android:name=".ui.CourierActivity"
+            android:label="快递查询" />
 
         <!--归属地查询-->
-        <activity android:name=".ui.PhoneActivity" android:label="归属地查询"/>
+        <activity
+            android:name=".ui.PhoneActivity"
+            android:label="归属地查询" />
 
         <!--微信web详情-->
-        <activity android:name=".ui.weChatDetailActivity" android:label="精选详情"/>
+        <activity android:name=".ui.weChatDetailActivity" />
 
 
     </application>
