@@ -33,4 +33,6 @@ object StaticClass {
     const val JUHE_COURIER = "e0555462055ffb153b55ae34a1cbb7e8"
     //京东万象手机归属地查询
     const val jCloud_PhoneNumber = "9ee825aa5e8760d8585ce038e3cc41c0"
+    //聚合数据，机器人问答
+    const val JUHE_ROBOTKEY = "502359e9a9aef6a75bac003cabb08ba8"
 }
