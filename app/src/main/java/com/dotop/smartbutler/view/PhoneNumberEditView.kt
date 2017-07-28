@@ -15,9 +15,10 @@ import android.widget.EditText
 
 
 class PhoneNumberEditView(mContext: Context,mAttrs: AttributeSet) : EditText(mContext,mAttrs) {
-
+    var isCleanPhoneNum = false
 
     fun AddNumber(number: String) {
+        if (isCleanPhoneNum) Clean()
         val rawText = text.toString()
         val newText = "$rawText$number"
         setText(newText.toCharArray(), 0, newText.length)

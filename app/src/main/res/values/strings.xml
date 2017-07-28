@@ -49,4 +49,7 @@
     <string name="express_company">快递公司</string>
     <string name="express_number">快递单号</string>
     <string name="query">查询</string>
+    <string name="pls_enter_message">请输入消息</string>
+    <string name="send">发送</string>
+    <string name="hello">你好!</string>
 </resources>

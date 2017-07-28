@@ -50,6 +50,7 @@ class LoginActivity : AppCompatActivity() {
             val savePass = ShareUtils.get(mConText,StaticClass.passWord,"") as String
             et_UserName.setText(saveUser.toCharArray(), 0, saveUser.length)
             et_Password.setText(savePass.toCharArray(), 0, savePass.length)
+            et_UserName.setSelection(saveUser.length)
         }
         dialog = CustomDialog(this, 300, 300, R.layout.dialog_loding, R.style.Theme_dialog, Gravity.CENTER, R.style.pop_anim_style)
         dialog?.setCancelable(false)

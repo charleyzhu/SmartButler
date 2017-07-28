@@ -24,6 +24,7 @@ import org.json.JSONObject
 
 
 class PhoneActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone)
@@ -111,6 +112,7 @@ class PhoneActivity : BaseActivity() {
                     }else if (company.indexOf("联通") > 0) {
                         iv_company.setImageResource(R.drawable.china_unicom)
                     }
+                    tv_phoneNumber.isCleanPhoneNum = true
 
                 }
 
