@@ -67,6 +67,10 @@ class ButlerFragment : Fragment() {
 
         mEt_send.onKey { v, keyCode, event ->
 
+            if (mEt_send.text.isEmpty() || (mEt_send.text.length == 1 && mEt_send.text.toString() == "\n")) {
+                return@onKey
+            }
+
             if (keyCode == KeyEvent.KEYCODE_ENTER && event?.action == KeyEvent.ACTION_UP) {
                 addListViewItem(mEt_send.text.toString().trim(), 2)
 
