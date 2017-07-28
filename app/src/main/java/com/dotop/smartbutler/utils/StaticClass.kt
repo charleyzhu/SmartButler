@@ -35,4 +35,6 @@ object StaticClass {
     const val jCloud_PhoneNumber = "9ee825aa5e8760d8585ce038e3cc41c0"
     //聚合数据，机器人问答
     const val JUHE_ROBOTKEY = "502359e9a9aef6a75bac003cabb08ba8"
+    //聚合数据,微信精选
+    const val JUHE_WECHAT = "c5cce6c6fafc7735d642e83ba4b6781d"
 }

@@ -80,6 +80,10 @@
         <!--归属地查询-->
         <activity android:name=".ui.PhoneActivity" android:label="归属地查询"/>
 
+        <!--微信web详情-->
+        <activity android:name=".ui.weChatDetailActivity" android:label="精选详情"/>
+
+
     </application>
 
 </manifest>
