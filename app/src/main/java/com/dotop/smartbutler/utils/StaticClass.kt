@@ -37,4 +37,6 @@ object StaticClass {
     const val JUHE_ROBOTKEY = "502359e9a9aef6a75bac003cabb08ba8"
     //聚合数据,微信精选
     const val JUHE_WECHAT = "c5cce6c6fafc7735d642e83ba4b6781d"
+    //美女接口
+    const val GIRL_INTERFACE = "http://gank.io/api/search/query/listview/category/%E7%A6%8F%E5%88%A9/count/50/page/1"
 }

@@ -9,6 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.dotop.smartbutler.R
 import com.dotop.smartbutler.entity.WechatListData
+import com.dotop.smartbutler.utils.L
+import com.squareup.picasso.Picasso
 
 /**
  * 项目名称:       SmartButler
@@ -39,7 +41,10 @@ class WechatListAdapter(var mContext: Context, var mList: MutableList<WechatList
 
         viewHolder.tv_title.setText(weChatData.title.toCharArray(), 0, weChatData.title.length)
         viewHolder.tv_source.setText(weChatData.source.toCharArray(), 0, weChatData.source.length)
-
+        if (weChatData.firstImg != "" && weChatData.firstImg != null) {
+            Picasso.with(mContext).load(weChatData.firstImg).resize(300, 200).centerCrop().into(viewHolder.iv_img)
+        }
+//        Picasso.with(mContext).load(weChatData.firstImg).resize(300,200).centerCrop().into(viewHolder.iv_img)
         return convertView!!
 
     }

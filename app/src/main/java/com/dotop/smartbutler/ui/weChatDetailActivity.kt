@@ -29,14 +29,17 @@ class weChatDetailActivity : BaseActivity() {
 
 
         wv_webview.settings.javaScriptEnabled = true
-        wv_webview.settings.builtInZoomControls = true
 
         wv_webview.webChromeClient = ChromeWebViewClient(mProgressBar)
 
 
         wv_webview.webViewClient = object : WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                view?.loadUrl(url)
                 return false
+            }
+            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                return shouldOverrideUrlLoading(view,request?.url.toString())
             }
 
             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
