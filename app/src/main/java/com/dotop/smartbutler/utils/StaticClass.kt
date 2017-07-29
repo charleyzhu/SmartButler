@@ -39,4 +39,6 @@ object StaticClass {
     const val JUHE_WECHAT = "c5cce6c6fafc7735d642e83ba4b6781d"
     //美女接口
     const val GIRL_INTERFACE = "http://gank.io/api/search/query/listview/category/%E7%A6%8F%E5%88%A9/count/50/page/1"
+    //讯飞tts
+    const val XUNFEI_TTS_KEY = "597af084"
 }

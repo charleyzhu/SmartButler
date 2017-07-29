@@ -60,8 +60,6 @@ class GirlFragment : Fragment() {
 
         mGirl_GridView.onItemClick { parent, view, position, id ->
             Picasso.with(activity).load(mList[position].url).into(grilImageView)
-//            mAttacher = PhotoViewAttacher(grilImageView)
-//            mAttacher.update()
             dialog.show()
         }
 

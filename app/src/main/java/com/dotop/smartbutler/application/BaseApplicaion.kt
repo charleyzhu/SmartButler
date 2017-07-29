@@ -6,6 +6,8 @@ import android.os.StrictMode
 import com.dotop.smartbutler.utils.StaticClass
 import com.tencent.bugly.crashreport.CrashReport
 import cn.bmob.v3.Bmob
+import com.iflytek.cloud.SpeechConstant
+import com.iflytek.cloud.SpeechUtility
 
 /**
  * 项目名称:       SmartButler
@@ -24,12 +26,7 @@ class BaseApplicaion:Application() {
         CrashReport.initCrashReport(getApplicationContext(),StaticClass.BUGLY_APPID, false)
         //初始化bmob
         Bmob.initialize(this, StaticClass.BMOB_APPID)
-
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
-//            val vmBuild = StrictMode.VmPolicy.Builder()
-//            StrictMode.setVmPolicy(vmBuild.build())
-//        }
-
+        SpeechUtility.createUtility(applicationContext, SpeechConstant.APPID +"=${StaticClass.XUNFEI_TTS_KEY}")
 
     }
 }

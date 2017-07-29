@@ -16,7 +16,12 @@ import com.dotop.smartbutler.adapter.ChatListAdapter
 import com.dotop.smartbutler.entity.ChatListData
 import com.dotop.smartbutler.entity.SmartUser
 import com.dotop.smartbutler.utils.L
+import com.dotop.smartbutler.utils.ShareUtils
 import com.dotop.smartbutler.utils.StaticClass
+import com.iflytek.cloud.SpeechConstant
+import com.iflytek.cloud.SpeechError
+import com.iflytek.cloud.SpeechSynthesizer
+import com.iflytek.cloud.SynthesizerListener
 import com.kymjs.rxvolley.RxVolley
 import com.kymjs.rxvolley.client.HttpCallback
 import com.kymjs.rxvolley.http.VolleyError
@@ -43,6 +48,7 @@ class ButlerFragment : Fragment() {
 
     lateinit var mEt_send: EditText
     lateinit var mBtn_send: Button
+    lateinit var mTTS: SpeechSynthesizer
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val butlerView = inflater?.inflate(R.layout.fragment_butler, null)
@@ -58,6 +64,22 @@ class ButlerFragment : Fragment() {
 
     private fun setupUI(butlerView: View) {
         mChatListView = butlerView.findViewById(R.id.lv_chatListView)
+
+        mTTS = SpeechSynthesizer.createSynthesizer(activity,null)
+        //2.合成参数设置，详见《科大讯飞MSC API手册(Android)》SpeechSynthesizer 类
+        mTTS.setParameter(SpeechConstant.VOICE_NAME, "xiaoyan")//设置发音人
+        mTTS.setParameter(SpeechConstant.SPEED, "50")//设置语速
+        mTTS.setParameter(SpeechConstant.VOLUME, "80")//设置音量，范围0~100
+        mTTS.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD) //设置云端
+        //设置合成音频保存位置（可自定义保存位置），保存在“./sdcard/iflytek.pcm”
+        //保存在SD卡需要在AndroidManifest.xml添加写SD卡权限
+        //如果不需要保存合成音频，注释该行代码
+        //mTts.setParameter(SpeechConstant.TTS_AUDIO_PATH, "./sdcard/iflytek.pcm");
+
+
+
+
+
 
         mEt_send = butlerView.findViewById(R.id.et_send)
         mBtn_send = butlerView.findViewById(R.id.btn_send)
@@ -103,6 +125,10 @@ class ButlerFragment : Fragment() {
 
     //添加ListItem
     private fun addListViewItem(text: String, type: Int) {
+        val isSpeek = ShareUtils.get(activity,"isSpeek",false) as Boolean
+        if (type == 1 && isSpeek){
+            startSpeak(text)
+        }
         val itemData = ChatListData(text, type)
         mList.add(itemData)
         chatAdapter.notifyDataSetChanged()
@@ -134,6 +160,41 @@ class ButlerFragment : Fragment() {
                 toast("机器人也有出错的时候:$error")
             }
         })
+    }
+
+    //开始说话
+    private fun startSpeak(text:String) {
+        mTTS.startSpeaking(text,mSynListener)
+    }
+
+    val mSynListener = object : SynthesizerListener {
+        override fun onBufferProgress(p0: Int, p1: Int, p2: Int, p3: String?) {
+
+        }
+
+        override fun onSpeakBegin() {
+
+        }
+
+        override fun onSpeakProgress(p0: Int, p1: Int, p2: Int) {
+
+        }
+
+        override fun onEvent(p0: Int, p1: Int, p2: Int, p3: Bundle?) {
+
+        }
+
+        override fun onSpeakPaused() {
+
+        }
+
+        override fun onSpeakResumed() {
+
+        }
+
+        override fun onCompleted(p0: SpeechError?) {
+
+        }
     }
 
 }
