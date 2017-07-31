@@ -15,7 +15,7 @@ import com.dotop.smartbutler.view.CustomDialog
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.toast
-
+import org.w3c.dom.Text
 
 
 /**
@@ -30,7 +30,6 @@ import org.jetbrains.anko.toast
 
 class LoginActivity : AppCompatActivity() {
 
-    val mConText = this
     var dialog:CustomDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +45,8 @@ class LoginActivity : AppCompatActivity() {
         //如果保存用户名和密码那就取出来
         ck_savepassword.isChecked = ShareUtils.get(this, StaticClass.isSavePassword, false) as Boolean
         if (ck_savepassword.isChecked) {
-            val saveUser = ShareUtils.get(mConText,StaticClass.userName,"") as String
-            val savePass = ShareUtils.get(mConText,StaticClass.passWord,"") as String
+            val saveUser = ShareUtils.get(this@LoginActivity,StaticClass.userName,"") as String
+            val savePass = ShareUtils.get(this@LoginActivity,StaticClass.passWord,"") as String
             et_UserName.setText(saveUser.toCharArray(), 0, saveUser.length)
             et_Password.setText(savePass.toCharArray(), 0, savePass.length)
             et_UserName.setSelection(saveUser.length)
@@ -81,9 +80,9 @@ class LoginActivity : AppCompatActivity() {
                     if (null == e) {
                         toast(getString(R.string.loginWasSuccessful))
                         if (ck_savepassword.isChecked) {
-                            ShareUtils.put(mConText, StaticClass.isSavePassword, true)
-                            ShareUtils.put(mConText, StaticClass.userName, et_UserName.text.toString().trim())
-                            ShareUtils.put(mConText, StaticClass.passWord, et_Password.text.toString().trim())
+                            ShareUtils.put(this@LoginActivity, StaticClass.isSavePassword, true)
+                            ShareUtils.put(this@LoginActivity, StaticClass.userName, et_UserName.text.toString().trim())
+                            ShareUtils.put(this@LoginActivity, StaticClass.passWord, et_Password.text.toString().trim())
                         }
                         startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                         finish()
@@ -116,8 +115,8 @@ class LoginActivity : AppCompatActivity() {
         super.onDestroy()
         //如果不保存密码则删除这些key
         if (!ck_savepassword.isChecked){
-            ShareUtils.delKey(mConText, StaticClass.userName)
-            ShareUtils.delKey(mConText, StaticClass.passWord)
+            ShareUtils.delKey(this@LoginActivity, StaticClass.userName)
+            ShareUtils.delKey(this@LoginActivity, StaticClass.passWord)
         }
     }
 }

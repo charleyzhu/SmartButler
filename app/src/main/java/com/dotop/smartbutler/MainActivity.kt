@@ -1,11 +1,15 @@
 package com.dotop.smartbutler
 
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.view.View
 import com.dotop.smartbutler.R.string.*
@@ -47,6 +51,12 @@ class MainActivity : AppCompatActivity() {
 
     fun initView() {
 
+        //检查权限
+        val permissionCheck = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS)
+        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECEIVE_SMS, Manifest.permission.BROADCAST_SMS,
+                    Manifest.permission.SEND_SMS), 2001)
+        }
 
         //使用anko的点击方式
         fab_setting.onClick {

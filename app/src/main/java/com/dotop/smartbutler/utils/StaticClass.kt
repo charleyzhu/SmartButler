@@ -41,4 +41,6 @@ object StaticClass {
     const val GIRL_INTERFACE = "http://gank.io/api/search/query/listview/category/%E7%A6%8F%E5%88%A9/count/50/page/1"
     //讯飞tts
     const val XUNFEI_TTS_KEY = "597af084"
+    //短信action
+    const val SMS_ACTION = "android.provider.Telephony.SMS_RECEIVED"
 }

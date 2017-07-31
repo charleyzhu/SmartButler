@@ -28,5 +28,7 @@ class BaseApplicaion:Application() {
         Bmob.initialize(this, StaticClass.BMOB_APPID)
         SpeechUtility.createUtility(applicationContext, SpeechConstant.APPID +"=${StaticClass.XUNFEI_TTS_KEY}")
 
+
+
     }
 }
