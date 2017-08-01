@@ -41,7 +41,6 @@ class SplashActivity : AppCompatActivity() {
                         intnet = Intent(this@SplashActivity,GuideActivity::class.java)
                     }else {
                         intnet = Intent(this@SplashActivity,LoginActivity::class.java)
-
                     }
                 }
             }

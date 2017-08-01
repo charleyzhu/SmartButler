@@ -49,11 +49,13 @@ class GuideActivity : AppCompatActivity() {
         btn_skip.onClick {
             val intent = Intent(this@GuideActivity,LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         view3.btn_enter.onClick {
             val intent = Intent(this@GuideActivity,LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

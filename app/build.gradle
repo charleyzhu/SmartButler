@@ -53,9 +53,13 @@ dependencies {
     compile 'com.github.chrisbanes:PhotoView:2.0.0'
     compile files('libs/Msc.jar')
     compile files('libs/Sunflower.jar')
+
+    //权限请求框架
+    compile 'pub.devrel:easypermissions:0.4.3'
+
 }
 repositories {
-    flatDir{
+    flatDir {
         dirs 'libs'
     }
     mavenCentral()

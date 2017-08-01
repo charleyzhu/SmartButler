@@ -109,10 +109,10 @@ class UserFragment : Fragment() {
     private fun initView(view: View) {
 
         //检查权限
-        val permissionCheck = ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 2001)
-        }
+//        val permissionCheck = ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+//        if (permissionCheck == PackageManager.PERMISSION_DENIED) {
+//            ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 2001)
+//        }
 
         exitBtn = view.findViewById<View>(R.id.btn_exit_user) as Button
         changeBtn = view.findViewById<View>(R.id.btn_changeInfo) as Button
