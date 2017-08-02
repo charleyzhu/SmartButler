@@ -43,4 +43,6 @@ object StaticClass {
     const val XUNFEI_TTS_KEY = "597af084"
     //短信action
     const val SMS_ACTION = "android.provider.Telephony.SMS_RECEIVED"
+    //更新接口
+    const val APP_CEHCK_UPDATE_INTERFACE = "http://172.16.100.241/update.php"
 }

@@ -57,6 +57,9 @@ dependencies {
     //权限请求框架
     compile 'pub.devrel:easypermissions:0.4.3'
 
+    //数字进度条
+    compile 'com.daimajia.numberprogressbar:library:1.4@aar'
+
 }
 repositories {
     flatDir {

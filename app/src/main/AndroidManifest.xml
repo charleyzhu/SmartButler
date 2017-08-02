@@ -19,14 +19,14 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!--获取手机录音机使用权限，听写、识别、语义理解需要用到此权限 -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!--允许程序改变网络连接状态 -->
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <!--读取联系人权限，上传联系人需要用到此权限 -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     <!--配置权限，用来记录应用配置信息 -->
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <!--短信权限-->
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
@@ -34,8 +34,6 @@
 
     <!--窗口权限-->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
-
 
 
     <application
@@ -108,6 +106,11 @@
         <activity
             android:name=".ui.PhoneActivity"
             android:label="归属地查询" />
+
+        <!--软件升级-->
+        <activity
+            android:name=".ui.UpdateActivity"
+            android:label="软件升级" />
 
         <!--微信web详情-->
         <activity android:name=".ui.weChatDetailActivity" />
